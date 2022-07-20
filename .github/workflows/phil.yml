@@ -6,13 +6,13 @@ on:
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
         
   deploy-devlopment:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     environment:
       name: devlopment
       url: 'terraform.io'
@@ -22,7 +22,7 @@ jobs:
         run: echo Deploy Devlopment
         
   deploy-homologacao:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     environment:
       name: homologacao
       url: 'terraform.io'
@@ -32,7 +32,7 @@ jobs:
         run: echo Deploy Homologacao
         
   deploy-producao:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     environment:
       name: producao
       url: 'terraform.io'
