@@ -25,7 +25,7 @@ jobs:
     runs-on: debian-latest
     environment:
       name: homologacao
-      url: 'facebook.com'
+      url: 'terraform.io'
     needs: deploy-devlopment
     steps:
       - name: Run a one-line script
@@ -35,7 +35,7 @@ jobs:
     runs-on: debian-latest
     environment:
       name: producao
-      url: 'facebook.com'
+      url: 'terraform.io'
     needs: deploy-homologacao
     steps:
       - name: Run a one-line script
