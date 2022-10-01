@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI-Terraform
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+  deploy-devlopment:
+    runs-on: ubuntu-latest
+    environment:
+      name: devlopment
+      url: 'terraform.io'
+    needs: build
+    steps:
+      - name: Run a one-line script
+        run: echo Deploy Devlopment
+        
+  deploy-homologacao:
+    runs-on: ubuntu-latest
+    environment:
+      name: homologacao
+      url: 'terraform.io'
+    needs: deploy-devlopment
+    steps:
+      - name: Run a one-line script
+        run: echo Deploy Homologacao
+        
+  deploy-producao:
+    runs-on: ubuntu-latest
+    environment:
+      name: producao
+      url: 'terraform.io'
+    needs: deploy-homologacao
+    steps:
+      - name: Run a one-line script
+        run: echo Deploy Producao
